@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.4.0" />
+    <PackageReference Include="Sharprompt" Version="2.4.5" />
   </ItemGroup>
 
 </Project>

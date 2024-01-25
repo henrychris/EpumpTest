@@ -1,13 +1,6 @@
 ﻿using Bogus;
 using EpumpTest;
-
-Dictionary<int, EpumpTest.Action> ActionSet = new()
-{
-	{ 1, new EpumpTest.Action { Name = "Social Share", RewardValue = 10, IsPercentage = false } },
-	{ 2, new EpumpTest.Action { Name = "Survery", RewardValue = 5, IsPercentage = false } },
-	{ 3, new EpumpTest.Action { Name = "Purchase", RewardValue = 10, IsPercentage = true } },
-	{ 4, new EpumpTest.Action { Name = "Write Review", RewardValue = 5, IsPercentage = false } }
-};
+using Sharprompt;
 
 static List<Product> CreateProducts(int numberOfProducts)
 {
@@ -29,7 +22,7 @@ static List<User> CreateUsers(int numberOfUsers)
 	return users;
 }
 
-void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeemablePoints)
+void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeemablePoints, Dictionary<int, EpumpTest.Action> actions)
 {
 	var rng = new Random();
 	var users = CreateUsers(numberOfUsers);
@@ -41,8 +34,7 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeem
 		Console.WriteLine($"\nRound {i + 1}");
 		foreach (var user in users)
 		{
-			var action = ActionSet[rng.Next(1, ActionSet.Count)];
-
+			var action = actions[rng.Next(1, actions.Count + 1)];
 			if (action.Name == "Purchase")
 			{
 				var product = products[rng.Next(0, products.Count)];
@@ -71,7 +63,43 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeem
 	}
 }
 
-Simulate(rounds: 10,
-		 numberOfUsers: 3,
-		 numberOfProducts: 10,
-		 minRedeemablePoints: 100);
+Dictionary<int, EpumpTest.Action> PromptUserForActions()
+{
+	var actions = new Dictionary<int, EpumpTest.Action>();
+	var actionCount = 1;
+
+	var numberOfActions = Prompt.Input<int>("Please enter the number of actions you would like to simulate");
+
+	while (actionCount <= numberOfActions)
+	{
+		var actionName = Prompt.Input<string>($"Please enter the name of action {actionCount}");
+		var actionRewardValue = Prompt.Input<int>($"How many points would {actionName} reward a user? (integer)");
+
+		actions.Add(actionCount, new EpumpTest.Action { Name = actionName, RewardValue = actionRewardValue, IsPercentage = false });
+		actionCount++;
+	}
+
+	return actions;
+}
+
+var actionSet = PromptUserForActions();
+actionSet.Add(actionSet.Count + 1, new EpumpTest.Action { Name = "Purchase", RewardValue = 10, IsPercentage = true });
+Console.WriteLine("NOTE: A Purchase action was added. This action allows a user to purchase a product and receive points based on the price of the product.");
+
+// list the actions that will be simulated
+Console.WriteLine("\nActions to be simulated:");
+foreach (var action in actionSet)
+{
+	Console.WriteLine($"{action.Key}. {action.Value.Name} - {action.Value.RewardValue}{(action.Value.IsPercentage ? " percent of the product's price" : " points")}");
+}
+
+var rounds = Prompt.Input<int>("How many rounds should be simulated? ");
+var numberOfUsers = Prompt.Input<int>("How many users should be generated for this simulation? ");
+var numberOfProducts = Prompt.Input<int>("How many products should be created for this simulation? ");
+var minRedeemablePoints = Prompt.Input<int>("How many points should a user have before they can redeem them? ");
+
+Simulate(rounds,
+		 numberOfUsers,
+		 numberOfProducts,
+		 minRedeemablePoints,
+		 actionSet);
