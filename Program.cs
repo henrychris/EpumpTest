@@ -92,6 +92,7 @@ foreach (var action in actionSet)
 {
 	Console.WriteLine($"{action.Key}. {action.Value.Name} - {action.Value.RewardValue}{(action.Value.IsPercentage ? " percent of the product's price" : " points")}");
 }
+Console.WriteLine("\n");
 
 var rounds = Prompt.Input<int>("How many rounds should be simulated? ");
 var numberOfUsers = Prompt.Input<int>("How many users should be generated for this simulation? ");
