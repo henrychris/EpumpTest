@@ -15,7 +15,7 @@ namespace EpumpTest
         {
             Console.Write($"Previous points: {Points}.");
             Points += action.RewardValue;
-            Console.Write($" New points: {Points}. User: {FirstName} {LastName}\n");
+            Console.Write($" New points: {Points}.\n\n");
         }
 
         public void PerformAction(Action action, double price)
@@ -27,12 +27,14 @@ namespace EpumpTest
                 var v = Math.Floor(price * action.RewardValue / (double)100);
                 Points += v;
             }
-            Console.Write($" New points: {Points}. User: {FirstName} {LastName}\n");
+            Console.Write($" New points: {Points}.\n\n");
         }
 
         public void RedeemPoints(int pointsToRedeem)
         {
+            Console.Write($"Previous points: {Points}.");
             Points -= pointsToRedeem;
+            Console.Write($" New points: {Points}.\n\n");
         }
     }
 }

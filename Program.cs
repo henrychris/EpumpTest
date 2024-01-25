@@ -29,7 +29,7 @@ static List<User> CreateUsers(int numberOfUsers)
 	return users;
 }
 
-void Simulate(int rounds, int numberOfUsers, int numberOfProducts)
+void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeemablePoints)
 {
 	var rng = new Random();
 	var users = CreateUsers(numberOfUsers);
@@ -53,6 +53,13 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts)
 
 			Console.WriteLine($"{user.FirstName} {user.LastName} performed {action.Name} worth {action.RewardValue} points");
 			user.PerformAction(action);
+
+			if (user.Points >= minRedeemablePoints)
+			{
+				var pointsToRedeem = rng.Next(1, (int)user.Points);
+				Console.WriteLine($"{user.FirstName} {user.LastName} redeemed {pointsToRedeem} points");
+				user.RedeemPoints(pointsToRedeem);
+			}
 		}
 	}
 
@@ -64,4 +71,4 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts)
 	}
 }
 
-Simulate(10, 3, 10);
+Simulate(10, 3, 10, 100);
