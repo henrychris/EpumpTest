@@ -1,0 +1,85 @@
+
+Round 1
+Wilfrid Cremin performed Survery worth 5 points
+Previous points: 0. New points: 5. User: Wilfrid Cremin
+Foster Corkery purchased Licensed Soft Fish for 525
+Previous points: 0. New points: 52. User: Foster Corkery
+Ransom Abbott performed Survery worth 5 points
+Previous points: 0. New points: 5. User: Ransom Abbott
+
+Round 2
+Wilfrid Cremin purchased Fantastic Steel Ball for 768
+Previous points: 5. New points: 81. User: Wilfrid Cremin
+Foster Corkery performed Social Share worth 10 points
+Previous points: 52. New points: 62. User: Foster Corkery
+Ransom Abbott performed Social Share worth 10 points
+Previous points: 5. New points: 15. User: Ransom Abbott
+
+Round 3
+Wilfrid Cremin performed Social Share worth 10 points
+Previous points: 81. New points: 91. User: Wilfrid Cremin
+Foster Corkery performed Survery worth 5 points
+Previous points: 62. New points: 67. User: Foster Corkery
+Ransom Abbott performed Social Share worth 10 points
+Previous points: 15. New points: 25. User: Ransom Abbott
+
+Round 4
+Wilfrid Cremin performed Survery worth 5 points
+Previous points: 91. New points: 96. User: Wilfrid Cremin
+Foster Corkery purchased Generic Plastic Bacon for 514
+Previous points: 67. New points: 118. User: Foster Corkery
+Ransom Abbott purchased Fantastic Steel Ball for 768
+Previous points: 25. New points: 101. User: Ransom Abbott
+
+Round 5
+Wilfrid Cremin performed Survery worth 5 points
+Previous points: 96. New points: 101. User: Wilfrid Cremin
+Foster Corkery performed Survery worth 5 points
+Previous points: 118. New points: 123. User: Foster Corkery
+Ransom Abbott performed Social Share worth 10 points
+Previous points: 101. New points: 111. User: Ransom Abbott
+
+Round 6
+Wilfrid Cremin purchased Ergonomic Steel Chair for 800
+Previous points: 101. New points: 181. User: Wilfrid Cremin
+Foster Corkery purchased Gorgeous Cotton Salad for 239
+Previous points: 123. New points: 146. User: Foster Corkery
+Ransom Abbott performed Survery worth 5 points
+Previous points: 111. New points: 116. User: Ransom Abbott
+
+Round 7
+Wilfrid Cremin purchased Refined Cotton Bike for 981
+Previous points: 181. New points: 279. User: Wilfrid Cremin
+Foster Corkery performed Survery worth 5 points
+Previous points: 146. New points: 151. User: Foster Corkery
+Ransom Abbott performed Survery worth 5 points
+Previous points: 116. New points: 121. User: Ransom Abbott
+
+Round 8
+Wilfrid Cremin performed Social Share worth 10 points
+Previous points: 279. New points: 289. User: Wilfrid Cremin
+Foster Corkery performed Social Share worth 10 points
+Previous points: 151. New points: 161. User: Foster Corkery
+Ransom Abbott performed Survery worth 5 points
+Previous points: 121. New points: 126. User: Ransom Abbott
+
+Round 9
+Wilfrid Cremin performed Social Share worth 10 points
+Previous points: 289. New points: 299. User: Wilfrid Cremin
+Foster Corkery purchased Licensed Soft Fish for 525
+Previous points: 161. New points: 213. User: Foster Corkery
+Ransom Abbott performed Social Share worth 10 points
+Previous points: 126. New points: 136. User: Ransom Abbott
+
+Round 10
+Wilfrid Cremin performed Survery worth 5 points
+Previous points: 299. New points: 304. User: Wilfrid Cremin
+Foster Corkery performed Social Share worth 10 points
+Previous points: 213. New points: 223. User: Foster Corkery
+Ransom Abbott performed Survery worth 5 points
+Previous points: 136. New points: 141. User: Ransom Abbott
+
+Simulation Results:
+Wilfrid Cremin has 304 points
+Foster Corkery has 223 points
+Ransom Abbott has 141 points
