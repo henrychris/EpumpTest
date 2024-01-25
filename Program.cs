@@ -28,7 +28,7 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeem
 	var users = CreateUsers(numberOfUsers);
 	var products = CreateProducts(numberOfProducts);
 
-	// for 10 rounds, where each user is iterated over once, select an action and perform it
+	// for n rounds, where each user is iterated over once, select an action and perform it
 	for (int i = 0; i < rounds; i++)
 	{
 		Console.WriteLine($"\nRound {i + 1}");
