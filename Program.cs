@@ -13,7 +13,7 @@ static List<Product> CreateProducts(int numberOfProducts)
 {
 	var fake = new Faker<Product>()
 		.RuleFor(p => p.Name, f => f.Commerce.ProductName())
-		.RuleFor(p => p.Price, f => f.Random.Int(100, 1000));
+		.RuleFor(p => p.Price, f => f.Random.Int(10, 100));
 
 	var products = fake.Generate(numberOfProducts);
 	return products;
