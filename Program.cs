@@ -71,4 +71,7 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeem
 	}
 }
 
-Simulate(10, 3, 10, 100);
+Simulate(rounds: 10,
+		 numberOfUsers: 3,
+		 numberOfProducts: 10,
+		 minRedeemablePoints: 100);
