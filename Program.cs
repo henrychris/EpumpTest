@@ -31,6 +31,8 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeem
 	// for n rounds, where each user is iterated over once, select an action and perform it
 	for (int i = 0; i < rounds; i++)
 	{
+		// sleep for 2 seconds to make the simulation more readable
+		Thread.Sleep(2000);
 		Console.WriteLine($"\nRound {i + 1}");
 		foreach (var user in users)
 		{
@@ -56,6 +58,7 @@ void Simulate(int rounds, int numberOfUsers, int numberOfProducts, int minRedeem
 	}
 
 	// after all rounds, print the total rewards for each user
+	Thread.Sleep(2000);
 	Console.WriteLine("\nSimulation Results:");
 	foreach (var user in users)
 	{
@@ -68,7 +71,8 @@ Dictionary<int, EpumpTest.Action> PromptUserForActions()
 	var actions = new Dictionary<int, EpumpTest.Action>();
 	var actionCount = 1;
 
-	var numberOfActions = Prompt.Input<int>("Please enter the number of actions you would like to simulate");
+	Console.WriteLine("First, add a set of actions and their rewards. During the simulation, a random action will be selected for each user.");
+	var numberOfActions = Prompt.Input<int>("How many actions do you want to add? ");
 
 	while (actionCount <= numberOfActions)
 	{
